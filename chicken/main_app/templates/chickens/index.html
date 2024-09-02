@@ -1,0 +1,27 @@
+{% extends 'base.html' %}{% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/chickens/chicken-index.css' %}" />
+{% endblock %} {% block content %}
+
+<section class="card-container">
+  {% for chicken in chickens %}
+  <div class="card">
+    <a href="/chickens/{{chicken.id}}">    <div class="card-content">
+      <div class="card-img-container">
+        <img
+          src="{% static 'images/sk8r-boi-cat.svg' %}"
+          alt="A skater boy cat"
+        />
+      </div>
+      <h2 class="card-title">{{ chicken.name }}</h2>
+      {% if chicken.age > 0 %}
+      <p>A {{ chicken.age }} year old {{ chicken.breed }}</p>
+      {% else %}
+      <p>A {{ chicken.breed }} kitten.</p>
+      {% endif %}
+      <p><small>{{ chicken.description }}</small></p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

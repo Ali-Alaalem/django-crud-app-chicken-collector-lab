@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+
+<section class="logo-container">
+  <div class="cat-container">
+    <img src="{% static 'images/splash.svg' %}" alt="The Cat Collector Cat" />
+  </div>
+  <img
+    src="{% static 'images/logotype.svg' %}"
+    alt="Text reads: Cat Collector"
+  />
+</section>
+
+<section>
+  <h1>Welcome to Chicken Collector!</h1>
+  <input type="hidden" name="next" value="{{next}}" />
+</section>
